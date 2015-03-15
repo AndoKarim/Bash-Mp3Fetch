@@ -13,15 +13,15 @@ help() {
 			 mp3album
 		 SYNOPSIS
 			 organise des fichiers mp3 en fonction de certains tags
-			 mp3album.sh [OPTIONâ€¦] [cheminâ€¦]
+			 mp3album.sh [OPTION...] [CHEMIN...]
 		 OPTIONS
 			 -h, --help affiche l'aide et termine
-			 -v, --verbose affiche les opérations effectuées \(sinon mode silencieux\)
+			 -v, --verbose affiche les opÃ©rations effectuÃ©es \(sinon mode silencieux\)
 			 -n, --dry-run essai pour voir sans modifier les fichiers 
-			 -k, --key organisation : clé1, clé2, clé3 || clé : album|genre|interprete
-			 -d, --dir chemin racine destination des morceaux triés
-			 -m, --move déplace les fichiers
-			 -r, --recursive explore les sous répertoires des chemins sources
+			 -k, --key organisation : clÃ©1, clÃ©2, clÃ©3 || clÃ© : album|genre|interprete
+			 -d, --dir chemin racine destination des morceaux triÃ©s
+			 -m, --move dÃ©place les fichiers
+			 -r, --recursive explore les sous rÃ©pertoires des chemins sources
 FIN
 }
 
@@ -123,7 +123,7 @@ for i in $(if (($recursive)); then find -name \*.mp3; else ls *.mp3; fi)
 do
 	if (($verbose)); then echo "Traitement de la musique $i"; fi
 	
-	#Récupere les clefs nécessaires au triage
+	#RÃ©cupere les clefs nÃ©cessaires au triage
 	if [[ -n $cle1 ]]; then
 		tmp=$(id3v2 -l "$i" | grep $(tagID3V2 $cle1))
 		tagA=${tmp##*: }
