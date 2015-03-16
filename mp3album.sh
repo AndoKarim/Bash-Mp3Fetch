@@ -1,3 +1,4 @@
+
 #!/bin/bash
 typeset -i verbose=0 help=0 dryrun=0 recursive=0 move=0 nbrKey=0 j=0
 
@@ -13,7 +14,7 @@ help() {
 			 mp3album
 		 SYNOPSIS
 			 organise des fichiers mp3 en fonction de certains tags
-			 mp3album.sh [OPTIONâ€¦] [cheminâ€¦]
+			 mp3album.sh [OPTION...] [chemin...]
 		 OPTIONS
 			 -h, --help affiche l'aide et termine
 			 -v, --verbose affiche les opérations effectuées \(sinon mode silencieux\)
@@ -29,7 +30,7 @@ tagID3V2 ()
 {
     case $1 in
 		"interprete")
-	    	echo "^TPE\?1";;
+	    	echo "^TPE";;
 		"album")
 	    	echo "^TAL";;
 		"genre")
